@@ -6,6 +6,18 @@
   <meta name="description" content="Shai Bachar - Senior Full-Stack Software Developer with 20+ years experience in Java, Python, DevOps, and Enterprise Systems">
   <title>Shai Bachar | Senior Full-Stack Software Developer</title>
   <style>
+    :root {
+      --bg: #f6f7fb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --accent-2: #7c3aed;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      --radius: 16px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,21 +25,25 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f3f2ef;
-      color: #000000e6;
-      line-height: 1.6;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.04), transparent 25%),
+                  radial-gradient(circle at 80% 10%, rgba(37, 99, 235, 0.05), transparent 25%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding-bottom: 2rem;
     }
 
     /* Top Navigation */
     .top-nav {
-      background-color: #ffffff;
-      border-bottom: 1px solid #00000014;
-      padding: 0.5rem 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 1rem;
       position: sticky;
+      backdrop-filter: blur(12px);
       top: 0;
       z-index: 100;
-      box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
+      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
     }
 
     .nav-content {
@@ -35,20 +51,20 @@
       margin: 0 auto;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 1rem;
     }
 
-    .nav-logo {
-      font-size: 1.5rem;
+    .nav-name {
+      font-size: 1.05rem;
       font-weight: 700;
-      color: #0a66c2;
-      text-decoration: none;
+      color: var(--text);
+      letter-spacing: 0.01em;
     }
 
-    .nav-name {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #000000e6;
+    .nav-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
     /* Main Container */
@@ -60,111 +76,140 @@
 
     /* Profile Card */
     .profile-card {
-      background-color: #ffffff;
-      border-radius: 8px;
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
       overflow: hidden;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
     }
 
     .profile-banner {
-      height: 120px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      height: 130px;
+      background: linear-gradient(120deg, rgba(37, 99, 235, 0.95) 0%, rgba(124, 58, 237, 0.9) 70%);
     }
 
     .profile-info {
-      padding: 0 1.5rem 1.5rem;
+      padding: 0 1.5rem 1.75rem;
       position: relative;
     }
 
     .avatar-wrapper {
-      margin-top: -50px;
+      margin-top: -55px;
       margin-bottom: 1rem;
     }
 
     .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-color: #0a66c2;
-      border: 4px solid #ffffff;
+      width: 124px;
+      height: 124px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(124, 58, 237, 0.9));
+      border: 6px solid #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       font-weight: 700;
       color: #ffffff;
+      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
     }
 
     .profile-name {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
     }
 
     .profile-headline {
       font-size: 1rem;
-      color: #000000e6;
-      margin-bottom: 0.5rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
     }
 
     .profile-location {
-      font-size: 0.875rem;
-      color: #00000099;
-      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
     }
 
     .contact-info {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.75rem;
       margin-top: 1rem;
       padding-top: 1rem;
-      border-top: 1px solid #00000014;
+      border-top: 1px solid var(--border);
     }
 
     .contact-link {
-      color: #0a66c2;
+      color: var(--card-bg);
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: 0.9rem;
       font-weight: 600;
+      padding: 0.65rem 0.95rem;
+      border-radius: 12px;
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.18);
+      transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
     }
 
     .contact-link:hover {
-      text-decoration: underline;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.24);
+    }
+
+    .contact-link.secondary {
+      background: #f8fafc;
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .contact-link.secondary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
     }
 
     /* Content Sections */
     .section-card {
-      background-color: #ffffff;
-      border-radius: 8px;
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
       padding: 1.5rem;
       margin-bottom: 1rem;
-      box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
     }
 
     .section-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #000000e6;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: 0.01em;
     }
 
     .section-content {
-      font-size: 0.875rem;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--muted);
     }
 
     /* About Section */
     .about-text {
-      color: #000000e6;
+      color: var(--muted);
     }
 
     /* Experience Items */
     .experience-item {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #00000014;
+      margin-bottom: 1.4rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px dashed var(--border);
     }
 
     .experience-item:last-child {
@@ -179,20 +224,26 @@
 
     .experience-title {
       font-size: 1rem;
-      font-weight: 600;
-      color: #000000e6;
-      margin-bottom: 0.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.2rem;
     }
 
     .experience-company {
-      font-size: 0.875rem;
-      color: #00000099;
-      margin-bottom: 0.25rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
     }
 
     .experience-duration {
-      font-size: 0.75rem;
-      color: #00000099;
+      font-size: 0.82rem;
+      color: var(--muted);
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 10px;
+      letter-spacing: 0.01em;
     }
 
     .experience-description {
@@ -205,16 +256,21 @@
     }
 
     .experience-description li {
-      padding-left: 1.5rem;
+      padding-left: 1.75rem;
       position: relative;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.55rem;
     }
 
     .experience-description li::before {
-      content: "•";
+      content: "";
       position: absolute;
-      left: 0.5rem;
-      color: #00000099;
+      left: 0.35rem;
+      top: 0.55rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.08);
     }
 
     /* Skills Section */
@@ -229,9 +285,9 @@
     }
 
     .skill-category-title {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #000000e6;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      color: var(--text);
     }
 
     .skill-list {
@@ -240,14 +296,14 @@
 
     .skill-list li {
       padding: 0.25rem 0;
-      color: #00000099;
+      color: var(--muted);
     }
 
     /* Education Items */
     .education-item {
       margin-bottom: 1rem;
       padding-bottom: 1rem;
-      border-bottom: 1px solid #00000014;
+      border-bottom: 1px dashed var(--border);
     }
 
     .education-item:last-child {
@@ -258,20 +314,20 @@
 
     .education-degree {
       font-size: 1rem;
-      font-weight: 600;
-      color: #000000e6;
+      font-weight: 700;
+      color: var(--text);
       margin-bottom: 0.25rem;
     }
 
     .education-school {
-      font-size: 0.875rem;
-      color: #00000099;
+      font-size: 0.9rem;
+      color: var(--muted);
       margin-bottom: 0.25rem;
     }
 
     .education-duration {
-      font-size: 0.75rem;
-      color: #00000099;
+      font-size: 0.82rem;
+      color: var(--muted);
     }
 
     /* Responsive Design */
@@ -353,8 +409,10 @@
   <!-- Top Navigation -->
   <nav class="top-nav">
     <div class="nav-content">
-      <span class="nav-logo">in</span>
-      <span class="nav-name">Shai Bachar</span>
+      <div>
+        <div class="nav-name">Shai Bachar</div>
+        <div class="nav-subtitle">Senior Full-Stack Software Developer</div>
+      </div>
     </div>
   </nav>
 
@@ -399,7 +457,7 @@
           </div>
           <div class="experience-description">
             <ul>
-              <li>Member of Intuits IDX (Intuit Data Exchange) engineering team, contributing to mission-critical data platforms that integrate external financial data into Intuit products</li>
+              <li>Member of Intuit's IDX (Intuit Data Exchange) engineering team, contributing to mission-critical data platforms that integrate external financial data into Intuit products</li>
               <li>Involved in feature development, operational support, monitoring, and continuous improvement of distributed systems</li>
             </ul>
           </div>
