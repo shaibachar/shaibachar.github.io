@@ -1,86 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shai Bachar | Senior Software Developer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shai Bachar - Senior Full-Stack Software Developer with 20+ years experience in Java, Python, DevOps, and Enterprise Systems">
+  <title>Shai Bachar | Senior Full-Stack Software Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f3f2ef;
+      color: #000000e6;
+      line-height: 1.6;
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #00000014;
+      padding: 0.5rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
+    }
+
+    .nav-content {
+      max-width: 1128px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0a66c2;
+      text-decoration: none;
+    }
+
+    .nav-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #000000e6;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1128px;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Profile Card */
+    .profile-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
+    }
+
+    .profile-banner {
+      height: 120px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .profile-info {
+      padding: 0 1.5rem 1.5rem;
+      position: relative;
+    }
+
+    .avatar-wrapper {
+      margin-top: -50px;
+      margin-bottom: 1rem;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #0a66c2;
+      border: 4px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .profile-headline {
+      font-size: 1rem;
+      color: #000000e6;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-location {
+      font-size: 0.875rem;
+      color: #00000099;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #00000014;
+    }
+
+    .contact-link {
+      color: #0a66c2;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Content Sections */
+    .section-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #000000e6;
+    }
+
+    .section-content {
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* About Section */
+    .about-text {
+      color: #000000e6;
+    }
+
+    /* Experience Items */
+    .experience-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #00000014;
+    }
+
+    .experience-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .experience-header {
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #000000e6;
+      margin-bottom: 0.25rem;
+    }
+
+    .experience-company {
+      font-size: 0.875rem;
+      color: #00000099;
+      margin-bottom: 0.25rem;
+    }
+
+    .experience-duration {
+      font-size: 0.75rem;
+      color: #00000099;
+    }
+
+    .experience-description {
+      margin-top: 0.5rem;
+    }
+
+    .experience-description ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .experience-description li {
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-description li::before {
+      content: "•";
+      position: absolute;
+      left: 0.5rem;
+      color: #00000099;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-category {
+      margin-bottom: 1rem;
+    }
+
+    .skill-category-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #000000e6;
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-list li {
+      padding: 0.25rem 0;
+      color: #00000099;
+    }
+
+    /* Education Items */
+    .education-item {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #00000014;
+    }
+
+    .education-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .education-degree {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #000000e6;
+      margin-bottom: 0.25rem;
+    }
+
+    .education-school {
+      font-size: 0.875rem;
+      color: #00000099;
+      margin-bottom: 0.25rem;
+    }
+
+    .education-duration {
+      font-size: 0.75rem;
+      color: #00000099;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        margin: 0.5rem auto;
+        padding: 0 0.5rem;
+      }
+
+      .profile-info {
+        padding: 0 1rem 1rem;
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 2rem;
+      }
+
+      .avatar-wrapper {
+        margin-top: -40px;
+      }
+
+      .profile-name {
+        font-size: 1.25rem;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .section-card {
+        padding: 1rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: #ffffff;
+      }
+
+      .top-nav {
+        display: none;
+      }
+
+      .profile-card,
+      .section-card {
+        box-shadow: none;
+        page-break-inside: avoid;
+      }
+
+      .profile-banner {
+        height: 60px;
+      }
+
+      .avatar-wrapper {
+        margin-top: -30px;
+      }
+
+      .avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+      }
+
+      .contact-link {
+        color: #000000;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <div class="max-w-4xl mx-auto px-4 py-10">
-    <header class="text-center mb-12">
-      <h1 class="text-4xl font-bold">Shai Bachar</h1>
-      <p class="text-xl">Senior Full-Stack Software Developer</p>
-      <p class="text-sm text-gray-600 mt-2">Java, Python, DevOps, C# Specialist</p>
-      <div class="flex justify-center gap-4 mt-4">
-        <a href="mailto:shaibachar@gmail.com" class="text-blue-600 underline">shaibachar@gmail.com</a>
-        <a href="tel:+972542240145" class="text-blue-600 underline">+972-54-2240145</a>
-      </div>
-      <div class="flex justify-center gap-4 mt-2">
-        <a href="https://github.com/shaibachar" class="text-blue-600 underline">GitHub</a>
-        <a href="https://www.linkedin.com/in/shaibachar/" class="text-blue-600 underline">LinkedIn</a>
-      </div>
-    </header>
+<body>
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <div class="nav-content">
+      <span class="nav-logo">in</span>
+      <span class="nav-name">Shai Bachar</span>
+    </div>
+  </nav>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">Technical Skills</h2>
-      <ul class="list-disc list-inside grid grid-cols-2 gap-x-6">
-        <li>Java, Python, JavaScript, C#, SQL</li>
-        <li>Spring Boot, Spring Security, ReactJS, Kafka</li>
-        <li>Oracle, MySQL, MongoDB, Couchbase, MSSQL</li>
-        <li>Jenkins, OpenShift, Kubernetes, Docker</li>
-        <li>Git, Bitbucket, Maven, Gradle</li>
-        <li>JUnit, NUnit, Rest Assured, WireMock, TestNG</li>
-        <li>AWS, Azure, Google Cloud</li>
-      </ul>
-    </section>
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Profile Card -->
+    <div class="profile-card">
+      <div class="profile-banner"></div>
+      <div class="profile-info">
+        <div class="avatar-wrapper">
+          <div class="avatar">SB</div>
+        </div>
+        <h1 class="profile-name">Shai Bachar</h1>
+        <p class="profile-headline">Senior Full-Stack Software Developer | Java, Python, DevOps | 20+ Years in Enterprise Systems</p>
+        <p class="profile-location">Kfar Saba, Israel</p>
+        <div class="contact-info">
+          <a href="tel:+972542240145" class="contact-link">📞 +972-54-2240145</a>
+          <a href="mailto:shaibachar@gmail.com" class="contact-link">✉️ shaibachar@gmail.com</a>
+          <a href="https://github.com/shaibachar" target="_blank" rel="noopener noreferrer" class="contact-link">🔗 GitHub</a>
+          <a href="https://www.linkedin.com/in/shaibachar/" target="_blank" rel="noopener noreferrer" class="contact-link">🔗 LinkedIn</a>
+        </div>
+      </div>
+    </div>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">Professional Experience</h2>
-      <div class="mb-6">
-        <h3 class="font-bold">Senior Software Developer - Amdocs (2009 – Present)</h3>
-        <ul class="list-disc list-inside ml-4 text-sm">
-          <li>Led large-scale migration from monolithic systems to distributed microservices using Spring Boot, Kafka, and Couchbase</li>
-          <li>Built and maintained dozens of microservices supporting authentication, CRM, and analytics on Kubernetes</li>
-          <li>Developed Java security solutions integrated with WebLogic, SAML, and Active Directory (SSO)</li>
-          <li>Modernized legacy systems using Spring Security, reducing integration complexity</li>
-          <li>Created full-stack apps with ReactJS and Java Swing for desktop and web platforms</li>
-          <li>Automated CI/CD pipelines with Jenkins & OpenShift, accelerating deployment cycles</li>
-          <li>Developed Python scripts for data migration and microservice testing with WireMock</li>
-          <li>Currently building intelligent automation systems for self-healing production environments</li>
-        </ul>
+    <!-- About Section -->
+    <div class="section-card">
+      <h2 class="section-title">About</h2>
+      <div class="section-content about-text">
+        <p>Senior Full-Stack Software Developer with over 20 years of experience designing, developing, and deploying enterprise-level applications. Expertise in Java, Python, C#, and modern DevOps practices. Proven track record in leading large-scale migrations from monolithic systems to distributed microservices architectures, building secure authentication solutions, and automating CI/CD pipelines. Strong background in cloud technologies (AWS, Azure, Google Cloud) and container orchestration with Kubernetes and Docker. Passionate about creating intelligent automation systems and optimizing production environments for reliability and performance.</p>
       </div>
-      <div class="mb-6">
-        <h3 class="font-bold">Senior Software Developer - Barak Capital (2007 – 2009)</h3>
-        <ul class="list-disc list-inside ml-4 text-sm">
-          <li>Built Java/.NET backend for trading systems</li>
-          <li>Developed Swing-based real-time UIs</li>
-          <li>Created distributed systems with Hibernate, MySQL</li>
-        </ul>
-      </div>
-      <div class="mb-6">
-        <h3 class="font-bold">Software Developer - Discount Bank (2006 – 2007)</h3>
-        <ul class="list-disc list-inside ml-4 text-sm">
-          <li>Developed Java UI tools and workflow engines</li>
-          <li>Managed deployments using ANT and Maven</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-bold">QA and Webmaster - Kedem Tech (2005 – 2006)</h3>
-        <ul class="list-disc list-inside ml-4 text-sm">
-          <li>QA testing for financial and hospitality software</li>
-          <li>Developed websites and newsletter systems</li>
-        </ul>
-      </div>
-    </section>
+    </div>
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Education</h2>
-      <ul class="list-disc list-inside">
-        <li>Executive MBA (Finance), The Hebrew University (2009 – 2012)</li>
-        <li>B.Sc. in Software Engineering, Engineering College of the Negev (2000 – 2005)</li>
-      </ul>
-    </section>
+    <!-- Experience Section -->
+    <div class="section-card">
+      <h2 class="section-title">Experience</h2>
+      <div class="section-content">
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="experience-title">Senior Software Developer</div>
+            <div class="experience-company">Amdocs</div>
+            <div class="experience-duration">2009 – Present</div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Led large-scale migration from monolithic systems to distributed microservices using Spring Boot, Kafka, and Couchbase</li>
+              <li>Built and maintained dozens of microservices supporting authentication, CRM, and analytics on Kubernetes</li>
+              <li>Developed Java security solutions integrated with WebLogic, SAML, and Active Directory (SSO)</li>
+              <li>Modernized legacy systems using Spring Security, reducing integration complexity</li>
+              <li>Created full-stack applications with ReactJS and Java Swing for desktop and web platforms</li>
+              <li>Automated CI/CD pipelines with Jenkins & OpenShift, accelerating deployment cycles</li>
+              <li>Developed Python scripts for data migration and microservice testing with WireMock</li>
+              <li>Currently building intelligent automation systems for self-healing production environments</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="experience-title">Senior Software Developer</div>
+            <div class="experience-company">Barak Capital</div>
+            <div class="experience-duration">2007 – 2009</div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Built Java/.NET backend systems for high-frequency trading platforms</li>
+              <li>Developed Swing-based real-time user interfaces for trading desks</li>
+              <li>Created distributed systems with Hibernate and MySQL for data persistence</li>
+              <li>Implemented performance optimizations for low-latency requirements</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="experience-title">Software Developer</div>
+            <div class="experience-company">Discount Bank</div>
+            <div class="experience-duration">2006 – 2007</div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Developed Java-based UI tools and workflow engines for banking operations</li>
+              <li>Managed application deployments using ANT and Maven build tools</li>
+              <li>Collaborated with business analysts to translate requirements into technical solutions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="experience-title">QA Engineer and Webmaster</div>
+            <div class="experience-company">Kedem Tech</div>
+            <div class="experience-duration">2005 – 2006</div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Performed QA testing for financial and hospitality software applications</li>
+              <li>Developed websites and newsletter management systems</li>
+              <li>Created automated testing scripts to improve testing efficiency</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="section-card">
+      <h2 class="section-title">Skills</h2>
+      <div class="section-content">
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-category-title">Programming Languages</div>
+            <ul class="skill-list">
+              <li>Java</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>C#</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category-title">Frameworks & Libraries</div>
+            <ul class="skill-list">
+              <li>Spring Boot</li>
+              <li>Spring Security</li>
+              <li>ReactJS</li>
+              <li>Kafka</li>
+              <li>Hibernate</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category-title">Databases</div>
+            <ul class="skill-list">
+              <li>Oracle</li>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>Couchbase</li>
+              <li>MSSQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category-title">DevOps & Cloud</div>
+            <ul class="skill-list">
+              <li>Jenkins</li>
+              <li>OpenShift</li>
+              <li>Kubernetes</li>
+              <li>Docker</li>
+              <li>AWS, Azure, Google Cloud</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category-title">Tools & Technologies</div>
+            <ul class="skill-list">
+              <li>Git, Bitbucket</li>
+              <li>Maven, Gradle</li>
+              <li>JUnit, NUnit, TestNG</li>
+              <li>Rest Assured</li>
+              <li>WireMock</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="section-card">
+      <h2 class="section-title">Education</h2>
+      <div class="section-content">
+        <div class="education-item">
+          <div class="education-degree">Executive MBA (Finance)</div>
+          <div class="education-school">The Hebrew University</div>
+          <div class="education-duration">2009 – 2012</div>
+        </div>
+
+        <div class="education-item">
+          <div class="education-degree">B.Sc. in Software Engineering</div>
+          <div class="education-school">Engineering College of the Negev</div>
+          <div class="education-duration">2000 – 2005</div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
