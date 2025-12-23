@@ -1,0 +1,38 @@
+[
+  {
+    "name": "shaibachar.github.io",
+    "html_url": "https://github.com/shaibachar/shaibachar.github.io",
+    "description": "Personal site and resume, hosted with GitHub Pages.",
+    "language": "HTML",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "name": "spring-security-saml-demo",
+    "html_url": "https://github.com/shaibachar/spring-security-saml-demo",
+    "description": "Demo showing how to integrate Spring Security with SAML-based identity providers.",
+    "language": "Java",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2024-10-10T00:00:00Z"
+  },
+  {
+    "name": "kubernetes-labs",
+    "html_url": "https://github.com/shaibachar/kubernetes-labs",
+    "description": "Hands-on Kubernetes and OpenShift experiments with deployment manifests and automation.",
+    "language": "YAML",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2024-08-15T00:00:00Z"
+  },
+  {
+    "name": "python-data-pipeline",
+    "html_url": "https://github.com/shaibachar/python-data-pipeline",
+    "description": "Lightweight Python ETL utilities for ingesting, validating, and exporting datasets.",
+    "language": "Python",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2024-06-05T00:00:00Z"
+  }
+]
