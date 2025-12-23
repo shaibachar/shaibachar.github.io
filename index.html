@@ -5,405 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Shai Bachar - Senior Full-Stack Software Developer with 20+ years experience in Java, Python, DevOps, and Enterprise Systems">
   <title>Shai Bachar | Senior Full-Stack Software Developer</title>
-  <style>
-    :root {
-      --bg: #f6f7fb;
-      --card-bg: #ffffff;
-      --border: #e5e7eb;
-      --text: #0f172a;
-      --muted: #475569;
-      --accent: #2563eb;
-      --accent-2: #7c3aed;
-      --shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-      --radius: 16px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.04), transparent 25%),
-                  radial-gradient(circle at 80% 10%, rgba(37, 99, 235, 0.05), transparent 25%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      padding-bottom: 2rem;
-    }
-
-    /* Top Navigation */
-    .top-nav {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-bottom: 1px solid var(--border);
-      padding: 0.9rem 1rem;
-      position: sticky;
-      backdrop-filter: blur(12px);
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
-    }
-
-    .nav-content {
-      max-width: 1128px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .nav-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: 0.01em;
-    }
-
-    .nav-subtitle {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 1128px;
-      margin: 1.5rem auto;
-      padding: 0 1rem;
-    }
-
-    /* Profile Card */
-    .profile-card {
-      background-color: var(--card-bg);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 1.25rem;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .profile-banner {
-      height: 130px;
-      background: linear-gradient(120deg, rgba(37, 99, 235, 0.95) 0%, rgba(124, 58, 237, 0.9) 70%);
-    }
-
-    .profile-info {
-      padding: 0 1.5rem 1.75rem;
-      position: relative;
-    }
-
-    .avatar-wrapper {
-      margin-top: -55px;
-      margin-bottom: 1rem;
-    }
-
-    .avatar {
-      width: 124px;
-      height: 124px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(124, 58, 237, 0.9));
-      border: 6px solid #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: #ffffff;
-      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
-    }
-
-    .profile-name {
-      font-size: 1.7rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-    }
-
-    .profile-headline {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 0.65rem;
-    }
-
-    .profile-location {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-link {
-      color: var(--card-bg);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 0.65rem 0.95rem;
-      border-radius: 12px;
-      background: linear-gradient(120deg, var(--accent), var(--accent-2));
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.18);
-      transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .contact-link:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.24);
-    }
-
-    .contact-link.secondary {
-      background: #f8fafc;
-      color: var(--text);
-      border: 1px solid var(--border);
-      box-shadow: none;
-    }
-
-    .contact-link.secondary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
-    }
-
-    /* Content Sections */
-    .section-card {
-      background-color: var(--card-bg);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.9rem;
-      color: var(--text);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      letter-spacing: 0.01em;
-    }
-
-    .section-content {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    /* About Section */
-    .about-text {
-      color: var(--muted);
-    }
-
-    /* Experience Items */
-    .experience-item {
-      margin-bottom: 1.4rem;
-      padding-bottom: 1.4rem;
-      border-bottom: 1px dashed var(--border);
-    }
-
-    .experience-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .experience-header {
-      margin-bottom: 0.5rem;
-    }
-
-    .experience-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.2rem;
-    }
-
-    .experience-company {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .experience-duration {
-      font-size: 0.82rem;
-      color: var(--muted);
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      display: inline-block;
-      padding: 0.25rem 0.6rem;
-      border-radius: 10px;
-      letter-spacing: 0.01em;
-    }
-
-    .experience-description {
-      margin-top: 0.5rem;
-    }
-
-    .experience-description ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .experience-description li {
-      padding-left: 1.75rem;
-      position: relative;
-      margin-bottom: 0.55rem;
-    }
-
-    .experience-description li::before {
-      content: "";
-      position: absolute;
-      left: 0.35rem;
-      top: 0.55rem;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.08);
-    }
-
-    /* Skills Section */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .skill-category {
-      margin-bottom: 1rem;
-    }
-
-    .skill-category-title {
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      color: var(--text);
-    }
-
-    .skill-list {
-      list-style: none;
-    }
-
-    .skill-list li {
-      padding: 0.25rem 0;
-      color: var(--muted);
-    }
-
-    /* Education Items */
-    .education-item {
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px dashed var(--border);
-    }
-
-    .education-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .education-degree {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-
-    .education-school {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .education-duration {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .container {
-        margin: 0.5rem auto;
-        padding: 0 0.5rem;
-      }
-
-      .profile-info {
-        padding: 0 1rem 1rem;
-      }
-
-      .avatar {
-        width: 100px;
-        height: 100px;
-        font-size: 2rem;
-      }
-
-      .avatar-wrapper {
-        margin-top: -40px;
-      }
-
-      .profile-name {
-        font-size: 1.25rem;
-      }
-
-      .contact-info {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .section-card {
-        padding: 1rem;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Print Styles */
-    @media print {
-      body {
-        background-color: #ffffff;
-      }
-
-      .top-nav {
-        display: none;
-      }
-
-      .profile-card,
-      .section-card {
-        box-shadow: none;
-        page-break-inside: avoid;
-      }
-
-      .profile-banner {
-        height: 60px;
-      }
-
-      .avatar-wrapper {
-        margin-top: -30px;
-      }
-
-      .avatar {
-        width: 80px;
-        height: 80px;
-        font-size: 1.5rem;
-      }
-
-      .contact-link {
-        color: #000000;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <!-- Top Navigation -->
@@ -442,6 +44,17 @@
       <h2 class="section-title">About</h2>
       <div class="section-content about-text">
         <p>Senior Full-Stack Software Developer with over 20 years of experience designing, developing, and deploying enterprise-level applications. Expertise in Java, Python, C#, and modern DevOps practices. Proven ability to lead teams, architect scalable backend systems, and deliver high-quality software products across global enterprise environments.</p>
+      </div>
+    </div>
+
+    <!-- Home Projects -->
+    <div class="section-card">
+      <h2 class="section-title">Home Projects</h2>
+      <div class="section-content">
+        <p class="section-intro">A curated list of public projects from my GitHub profile. Explore the repositories to see recent experiments, utilities, and portfolio highlights.</p>
+        <div class="projects-grid" id="projects-grid">
+          <div class="project-status" id="projects-status">Loading latest GitHub projects...</div>
+        </div>
       </div>
     </div>
 
@@ -613,5 +226,79 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const projectsGrid = document.getElementById('projects-grid');
+    const projectsStatus = document.getElementById('projects-status');
+
+    async function loadProjects() {
+      if (!projectsGrid || !projectsStatus) return;
+
+      try {
+        const response = await fetch('./github_public_projects.json', { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error(`Projects file responded with status ${response.status}`);
+        }
+
+        const repositories = await response.json();
+        const publicProjects = repositories
+          .filter(repo => !repo.private)
+          .sort((a, b) => new Date(b.pushed_at || b.updated_at || 0) - new Date(a.pushed_at || a.updated_at || 0));
+
+        projectsGrid.innerHTML = '';
+
+        if (!publicProjects.length) {
+          projectsGrid.innerHTML = '<div class="project-status">No public projects found on GitHub.</div>';
+          return;
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        publicProjects.forEach(repo => {
+          const card = document.createElement('article');
+          card.className = 'project-card';
+
+          const title = document.createElement('div');
+          title.className = 'project-title';
+          title.textContent = repo.name;
+
+          const description = document.createElement('p');
+          description.className = 'project-description';
+          description.textContent = repo.description || 'No description provided yet.';
+
+          const meta = document.createElement('div');
+          meta.className = 'project-meta';
+
+          const language = document.createElement('span');
+          language.textContent = repo.language ? `💻 ${repo.language}` : '💻 Language not set';
+
+          const stars = document.createElement('span');
+          stars.textContent = `⭐ ${repo.stargazers_count}`;
+
+          const forks = document.createElement('span');
+          forks.textContent = `🍴 ${repo.forks_count}`;
+
+          meta.append(language, stars, forks);
+
+          const link = document.createElement('a');
+          link.className = 'project-link';
+          link.href = repo.html_url;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = 'View on GitHub ↗';
+
+          card.append(title, description, meta, link);
+          fragment.append(card);
+        });
+
+        projectsGrid.append(fragment);
+      } catch (error) {
+        console.error('Unable to load GitHub projects', error);
+        projectsGrid.innerHTML = `<div class="project-status error">Unable to load GitHub projects right now. Please try again later or visit <a href="https://github.com/shaibachar" class="project-link">github.com/shaibachar</a>.</div>`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadProjects);
+  </script>
 </body>
 </html>
